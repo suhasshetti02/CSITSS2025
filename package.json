@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/suhasshetti02/CSITSS2025.git",
   "name": "student-congress",
   "version": "0.1.1",
   "private": true,
@@ -14,6 +15,8 @@
   "license": "MIT",
   "description": "PWA to interact with users for CSITSS",
   "scripts": {
+    "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
