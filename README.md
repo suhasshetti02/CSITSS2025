@@ -1,16 +1,69 @@
-# CSITSS2025
-## Front-end Task 
-• Modified some design elements, including colors, button 
-animations, and scrolling effects. 
+# CSITSS 2025 Conference Website
 
-• Added a dark mode toggle that applies dark mode 
-across all web pages. 
+A Next.js website for the 9th International Conference on Computational Systems and Information Technology for Sustainable Solutions (CSITSS-2025), organised by R.V. College of Engineering. The repository includes conference information pages, committee and speaker data, schedule and registration views, and a site-wide theme context.
 
-• Implemented dark mode using Tailwind CSS.
+## Implemented site sections
 
-## Screen shots ##
-![image](https://github.com/user-attachments/assets/33fa45b6-0b71-4448-bd91-b1253f6a729c)
-![image](https://github.com/user-attachments/assets/db517f15-dc4b-4f89-8e94-3858548cb69c)
+The Pages Router application contains pages for:
 
-![image](https://github.com/user-attachments/assets/a5161f26-c2b0-4da6-bca9-058a8345fa30)
-![Screenshot 2025-03-13 220701](https://github.com/user-attachments/assets/5ef624bb-b2dc-4d25-acc9-0d050dea6bce)
+- Home / conference overview.
+- About and conference information.
+- Committee and committee-member details.
+- Awards, speakers, tracks, and technical information.
+- Paper submission information.
+- Registration and sponsorship.
+- Programme schedule.
+- Contact information.
+
+The shared React components include navigation, header imagery, gallery, timeline, speaker and committee cards, countdown timer, and thank-you popup. The theme context stores the selected light/dark preference in browser localStorage.
+
+## Technology stack
+
+| Area | Technologies |
+|---|---|
+| Framework | Next.js 15 (Pages Router) |
+| UI | React 19, TypeScript / TSX |
+| Styling | Tailwind CSS, PostCSS |
+| Components | Custom React components, Lucide / React icon libraries |
+| Theme | React Context with localStorage persistence |
+| Build / tooling | npm, ESLint, Prettier |
+
+## Repository structure
+
+- `pages/` — conference pages and dynamic committee detail route.
+- `components/` — navigation, cards, gallery, timeline, countdown, and shared UI.
+- `context/ThemeContext.tsx` — application theme state.
+- `data/` — conference chairs, committees, patrons, and related content data.
+- `public/` — static images and assets.
+- `styles/` — global / component styles.
+- `next.config.js`, `tailwind.config.js`, `tsconfig.json` — framework and build configuration.
+
+## Run locally
+
+Requirements: a Node.js version supported by the Next.js version in `package.json`, and npm.
+
+```bash
+npm install
+npm run dev
+```
+
+Open the local URL printed by Next.js (normally `http://localhost:3000`).
+
+Production build:
+
+```bash
+npm run build
+npm start
+```
+
+## Known repository notes
+
+- The root README previously described only a small front-end styling task; the repository contains a multi-page conference website and supporting content data.
+- The home page currently contains a paper-submission link whose URL references a CSITSS 2024 submission portal. Confirm the intended 2025 destination before using the site for real submissions.
+- The package manifest contains framework/tooling version mismatches (including Next.js 15 with an older `eslint-config-next` major). Reconcile the dependency versions and validate a clean install/build before deployment.
+- The checked-in content includes conference-specific information; verify dates, committee membership, venue, links, and registration details before reusing the site for another event.
+- The theme preference is stored locally in the browser; it is not a server-side user preference.
+
+## License
+
+See repository license and third-party component terms.
